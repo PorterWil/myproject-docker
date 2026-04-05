@@ -1,0 +1,19 @@
+route:
+  receiver: "telegram"
+  group_wait: 10s
+  group_interval: 30s
+  repeat_interval: 1h
+
+receivers:
+  - name: "telegram"
+    telegram_configs:
+      - bot_token: "8077328804:AAGV6PAj9Qe_sFGfhdFAbPkTqfn6X_0TVLY"
+        chat_id: 5318891160
+        parse_mode: "HTML"
+        message: |
+          🚨 <b>{{ .Status | toUpper }}</b>
+          {{ range .Alerts }}
+          <b>{{ .Labels.alertname }}</b>
+          {{ .Annotations.summary }}
+          {{ .Annotations.description }}
+          {{ end }}
