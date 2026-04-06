@@ -1,0 +1,18 @@
+[
+  {
+    "id": "deploy",
+    "execute-command": "/home/serv1/myproject-docker/deploy.sh",
+    "command-working-directory": "/home/serv1/myproject-docker",
+    "response-message": "Deploy started",
+    "trigger-rule": {
+      "match": {
+        "type": "payload-hash-sha256",
+        "secret": "SECRET_TOKEN",
+        "parameter": {
+          "source": "header",
+          "name": "X-Hub-Signature-256"
+        }
+      }
+    }
+  }
+]

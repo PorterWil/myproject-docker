@@ -39,7 +39,7 @@ def index():
     cur.close()
     conn.close()
 
-    return "visit saved (docker)\n"
+    return "visit saved v5 (docker)\n"
 
 @app.route("/visits")
 def visits():
