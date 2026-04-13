@@ -32,7 +32,8 @@ log "Pulling latest code..."
 git pull origin "$BRANCH"
 
 log "Rebuilding containers..."
-docker compose up -d --build
+docker compose build --no-cache
+docker compose up -d
 
 log "Waiting for app to start..."
 sleep 8

@@ -1,0 +1,12 @@
+# logs
+deploy.log
+
+# env
+.env
+
+# python
+__pycache__/
+*.pyc
+
+# docker
+*.pid
